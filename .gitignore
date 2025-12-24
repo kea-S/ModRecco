@@ -1,0 +1,84 @@
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+.Python
+env/
+.env
+.venv/
+venv/
+venv.bak/
+build/
+develop-eggs/
+dist/
+eggs/
+*.egg-info/
+.installed.cfg
+*.manifest
+*.spec
+
+# uv specific (virtual environment)
+# uv typically places virtual environments in .venv/ by default.
+.venv/
+
+# Editor/OS specific
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
+*.log
+*.bak
+*.orig
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Machine Learning specific
+# Data
+data/
+datasets/
+tmp/
+temp/
+
+# Models
+models/
+checkpoints/
+*.pt # PyTorch model files
+*.pth # PyTorch model files
+*.h5 # Keras/TensorFlow model files
+*.hdf5 # Keras/TensorFlow model files
+*.onnx # ONNX model files
+*.pkl # Pickle files
+*.joblib # Joblib files
+*.bin # Binary files often used for model weights
+
+# Logs & Experiment tracking
+logs/
+runs/ # Often used by TensorBoard, MLflow, Weights & Biases
+mlruns/
+wandb/
+tensorboard/
+output/
+
+# Results & Visualizations
+results/
+figures/
+plots/
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Environment variables
+.env
+.flaskenv
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore

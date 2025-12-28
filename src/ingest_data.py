@@ -51,7 +51,7 @@ def main():
 
     moduleInfoJson = json.loads(rawModuleInfoResponse)
 
-    saveDataPathString = get_absolute_path("data/raw/moduleInfo.json")
+    saveDataPathString = get_absolute_path("data/dev/raw/moduleInfo.json")
 
     ensure_path_exists(saveDataPathString)
 

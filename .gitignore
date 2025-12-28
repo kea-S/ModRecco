@@ -58,3 +58,6 @@ undo/
 .vscode/
 *.sublime-project
 *.sublime-workspace
+
+# Project
+./data/prod/*

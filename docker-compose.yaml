@@ -1,0 +1,9 @@
+services:
+  db:
+    image: pgvector/pgvector:pg18
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - ./data/prod:/var/lib/postgresql

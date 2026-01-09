@@ -83,17 +83,8 @@ def main():
     specificModuleapiPathString = \
         "{NUSMODS}/{ACADEMIC_YEAR}/{MODULES_PATH}/{module_code}.json"
 
-    start_index = next((i for i, item in enumerate(moduleListJson) if item.get('moduleCode') == "CP2107"), 0)
-    remaining_data = moduleListJson[start_index:]
-
-    for module in remaining_data:
+    for module in moduleListJson:
         moduleCode = module["moduleCode"]
-
-        thing = specificModuleapiPathString.format(NUSMODS=NUSMODS,
-                                                   ACADEMIC_YEAR=ACADEMIC_YEAR,
-                                                   MODULES_PATH=MODULES_PATH,
-                                                   module_code=moduleCode)
-        logger.info(thing)
 
         try:
             rawModuleInfoResponse = make_get_request(specificModuleapiPathString.

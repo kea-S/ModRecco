@@ -60,4 +60,4 @@ undo/
 *.sublime-workspace
 
 # Project
-data/
+/data/

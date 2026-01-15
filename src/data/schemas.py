@@ -30,11 +30,11 @@ PrereqTree: TypeAlias = Union[str, PrereqNode]
 PrereqNode.model_rebuild()
 
 
-class WeekRange:
+class WeekRange(BaseModel):
     start: date
     end: date
-    weekInterval: int
-    weeks: List[int]
+    weekInterval: Optional[int] = None
+    weeks: Optional[List[int]] = None
 
 
 class Lesson(BaseModel):
@@ -46,13 +46,15 @@ class Lesson(BaseModel):
     day: str
     lessonType: str
     size: int
+    covidZone: str
 
 
 class SemesterData(BaseModel):
     semester: int
-    examDate: datetime
-    examDuration: int
-    timetable: Lesson
+    examDate: Optional[datetime] = None
+    examDuration: Optional[int] = None
+    timetable: List[Lesson]
+    covidZones: List[str]
 
 
 class User(Base):
@@ -75,7 +77,7 @@ class Module(Base):
     module_credit: Mapped[int] = mapped_column()
     vector_embedding: Mapped[List[float]] = mapped_column(Vector(64),
                                                           nullable=True)   # size for now
-    semester_data: Mapped[SemesterData] = mapped_column(JSONB)
+    semester_data: Mapped[List[SemesterData]] = mapped_column(JSONB)
     prereq_tree: Mapped[Optional[PrereqTree]] = mapped_column(JSONB)
 
 
